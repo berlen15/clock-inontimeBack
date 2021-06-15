@@ -1,7 +1,6 @@
 package com.fichajes.clockinontime.entity;
 
 import javax.persistence.*;
-import javax.smartcardio.Card;
 import java.io.Serializable;
 import java.util.List;
 

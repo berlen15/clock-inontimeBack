@@ -33,10 +33,14 @@ public class User implements Serializable {
     @Column(name="telephone")
     private String telephone;
 
+    @Column(name="role", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Card> cards;
 
-    public User(Long userid, String username, String password, String name, String surname, String identification, String email, String telephone, List<Card> cards) {
+    public User(Long userid, String username, String password, String name, String surname, String identification, String email, String telephone, List<Card> cards, Role role) {
         this.userid = userid;
         this.username = username;
         this.password = password;
@@ -46,6 +50,7 @@ public class User implements Serializable {
         this.email = email;
         this.telephone = telephone;
         this.cards = cards;
+        this.role=role;
     }
 
     public Long getUserid() {
@@ -118,5 +123,13 @@ public class User implements Serializable {
 
     public void setCards(List<Card> cards) {
         this.cards = cards;
+    }
+
+    public Role getRol() {
+        return role;
+    }
+
+    public void setRol(Role role) {
+        this.role = role;
     }
 }

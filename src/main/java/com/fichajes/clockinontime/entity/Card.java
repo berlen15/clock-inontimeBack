@@ -2,6 +2,7 @@ package com.fichajes.clockinontime.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -11,6 +12,9 @@ public class Card implements Serializable {
     @Column(name="card_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cardid;
+
+    @Column(name="date")
+    private Date dateCard;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "card")
     private List<ClockingTime> times;
@@ -49,6 +53,14 @@ public class Card implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Date getDateCard() {
+        return dateCard;
+    }
+
+    public void setDateCard(Date dateCard) {
+        this.dateCard = dateCard;
     }
 }
 

@@ -2,6 +2,7 @@ package com.fichajes.clockinontime.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Entity
@@ -17,12 +18,12 @@ public class ClockingTime implements Serializable {
     private Card card;
 
     @Column(name="time")
-    private Date date;
+    private LocalTime time;
 
-    public ClockingTime(Long clockingtimeid, Card card, Date date) {
+    public ClockingTime(Long clockingtimeid, Card card, LocalTime time) {
         this.clockingtimeid = clockingtimeid;
         this.card = card;
-        this.date = date;
+        this.time = time;
     }
 
     public Long getClockingtimeid() {
@@ -41,11 +42,11 @@ public class ClockingTime implements Serializable {
         this.card = card;
     }
 
-    public Date getDate() {
-        return date;
+    public LocalTime getTime() {
+        return time;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTime(LocalTime time) {
+        this.time = time;
     }
 }

@@ -3,12 +3,13 @@ package com.fichajes.clockinontime.dto;
 import com.fichajes.clockinontime.entity.Card;
 
 import java.io.Serializable;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class ClockingtimeDTO implements Serializable {
     private Long clockingtimeid;
     private Card card;
-    private Date date;
+    private LocalTime time;
 
     public Long getClockingtimeid() {
         return clockingtimeid;
@@ -26,11 +27,11 @@ public class ClockingtimeDTO implements Serializable {
         this.card = card;
     }
 
-    public Date getDate() {
-        return date;
+    public LocalTime getTime() {
+        return time;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTime(LocalTime time) {
+        this.time = time;
     }
 }
